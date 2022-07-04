@@ -1,8 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:implication_solver/Pages/TruthTable/TruthTableImportPage.dart';
 import 'package:implication_solver/Pages/TruthTable/TruthTablePage.dart';
 import 'package:implication_solver/Utilities/Routing.dart';
 import 'package:implication_solver/Utilities/Utils.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class TruthTableInfoPage extends StatefulWidget {
   @override
@@ -65,6 +68,20 @@ class _TruthTableInfoPageState extends State<TruthTableInfoPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  SizedBox(width: 50,),
+                  Column(
+                    children: [
+                      IconButton(
+                        onPressed: (){
+                          launchUrl(Uri.parse("https://github.com/andrewwahid/StateMinimizer"));
+                        },
+                        iconSize: 50,
+                        splashRadius: 0.1,
+                        icon: Icon(FontAwesomeIcons.github),
+                      ),
+                      Text("@andrewwahid", style: TextStyle(color: Colors.white54),)
+                    ],
+                  ),
                   Spacer(),
                   RaisedButton(
                     color: Colors.yellow[700],
